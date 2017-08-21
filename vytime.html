@@ -1,0 +1,41 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <!-- Vidyard inline embed code -->
+    <script type="text/javascript" id="vidyard_embed_code_hedIuHeKRKySm1qx9xXV7w" src="//play.vidyard.com/hedIuHeKRKySm1qx9xXV7w.js?v=3.1&type=inline"></script>
+    <script src="//play.vidyard.com/v0/api.js"></script>
+    <script type="text/javascript">
+      // Parsing the query string
+      function get_parameter_by_name(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.search);
+        if (results == null) {
+          return "";
+        } else {
+          return results[1];
+        }
+      }
+      // Get the number of seconds from the query string using "vytime" as the parameter
+      var playerTime = parseInt(get_parameter_by_name('vytime'));
+            
+      // If the vytime parameter is present, start the video automatically and jump to the time.
+      function timeCheck() {
+        if (playerTime > 0) {
+        // Use the player API to start the player and jump to a specific time.
+          var videos = new Vidyard.players();
+          videos["hedIuHeKRKySm1qx9xXV7w"].on("ready",function (){
+            videos["hedIuHeKRKySm1qx9xXV7w"].play();
+          });
+          videos["hedIuHeKRKySm1qx9xXV7w"].on("play",function () {
+            videos["hedIuHeKRKySm1qx9xXV7w"].seek(playerTime);
+            playerTime = null;  
+          });
+        }
+      }
+      window.onload = timeCheck();
+    </script>
+  </body>
+</html>
