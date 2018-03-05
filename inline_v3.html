@@ -5,5 +5,12 @@
   <body>
     <script type="text/javascript" id="vidyard_embed_code_GoCHMjTyASHVKG1hp8eS9o" src="//play.vidyard.com/GoCHMjTyASHVKG1hp8eS9o.js?v=3.1.1&type=inline">
     </script>
+    <script type="text/javascript">
+      const player = new Vidyard.player("GoCHMjTyASHVKG1hp8eS9o");
+      player.on('ready', (e) => {
+        console.log('READY');
+        console.log(e);
+      });
+    </script>
   </body>
 </html>
