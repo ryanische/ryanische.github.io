@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <script type="text/javascript" async data-playbackurl="play-staging-wasp.vidyard.com"
+    src="https://play-staging-wasp.vidyard.com/embed/v4.js"></script>
+  <script type="text/javascript">
+    function registerHandlers (vidyardEmbed) {
+      vidyardEmbed.api.addReadyListener((_, player) => {
+        
+        //player.play();
+        player.on('play', () => {
+          console.log('playing');
+          //player.seek(20);
+        });
+
+        //setTimeout(() => player.seek(20), 10000);
+      });
+    }
+    window.vidyardEmbed
+        ? registerHandlers(window.vidyardEmbed)
+        : (window.onVidyardAPI = registerHandlers);
+  </script>
+</head>
+
+<body>
+  <img class="vidyard-player-embed" src="https://play-staging-wasp.vidyard.com/QfN9JdaEpunTA7VdrAd2mK.jpg"
+    data-uuid="QfN9JdaEpunTA7VdrAd2mK" data-v="4" data-type="inline" />
+</body>
+
+</html>
