@@ -1,1 +1,1 @@
-Sitemap: https://secure.vidyard.com/sitemaps/sitemap-0AVlXs9f-VuUonNI7VDTfw.xml
+Sitemap: https://staging-wasp.vidyard.com/sitemaps/sitemap-cTz458FupDhMNtnKlHbb_g.xml
